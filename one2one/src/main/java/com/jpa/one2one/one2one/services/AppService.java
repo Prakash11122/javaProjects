@@ -18,13 +18,33 @@ public class AppService {
     private AddressRepository addressRepository;
 
     @Transactional
-    public void saveData(){
-        Student prakaash = new Student("prakash",70772200);
-        Addresses prakaashAddress = new Addresses("02 Bhopal", "Kenderapara","Odisha");
+    public void saveData() {
+        Addresses prakaashAddress = new Addresses("02 Bhopal", "Kenderapara", "Odisha");
+        Student prakaash = new Student("prakash", 70772200, prakaashAddress);
+
         addressRepository.save(prakaashAddress);
         studentRepository.save(prakaash);
 
         System.out.println("data for student and address table are inserted");
     }
+
+
+    public void fetchStudent1Record(){
+        Student studentData = studentRepository.findById(1).get();
+        System.out.println(studentData);
+
+//        Addresses addresses = studentData.getAddresses();
+//        System.out.println(addresses);
+
+
+    }
+
+
+
+
+
+
+
+
 
 }

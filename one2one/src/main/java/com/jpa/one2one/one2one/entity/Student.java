@@ -15,10 +15,9 @@ public class Student {
     private String name;
     private int mobile;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private Addresses addresses;
-
 
 
     @Override
@@ -33,8 +32,9 @@ public class Student {
     public Student() {
     }
 
-    public Student(String name, int mobile) {
+    public Student(String name, int mobile, Addresses addresses) {
         this.name = name;
         this.mobile = mobile;
+        this.addresses = addresses;
     }
 }

@@ -15,7 +15,7 @@ public class Student {
     private String name;
     private int mobile;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private Addresses addresses;
 

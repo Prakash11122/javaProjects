@@ -22,29 +22,23 @@ public class AppService {
         Addresses prakaashAddress = new Addresses("02 Bhopal", "Kenderapara", "Odisha");
         Student prakaash = new Student("prakash", 70772200, prakaashAddress);
 
-        addressRepository.save(prakaashAddress);
+        //addressRepository.save(prakaashAddress);
         studentRepository.save(prakaash);
 
         System.out.println("data for student and address table are inserted");
     }
 
-
-    public void fetchStudent1Record(){
+    @Transactional
+    public void fetchStudent1Record() {
         Student studentData = studentRepository.findById(1).get();
         System.out.println(studentData);
+        System.out.println(studentData.getAddresses().getState());
 
 //        Addresses addresses = studentData.getAddresses();
 //        System.out.println(addresses);
 
 
     }
-
-
-
-
-
-
-
 
 
 }

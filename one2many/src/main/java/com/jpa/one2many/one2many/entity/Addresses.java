@@ -1,14 +1,13 @@
-package com.jpa.one2one.one2one.entity;
+package com.jpa.one2many.one2many.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
-
-
 @Entity
-@Table(name = "addresses")
+@Table(name = "Address")
 @Data
 public class Addresses {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int addressId;
@@ -16,8 +15,6 @@ public class Addresses {
     private String city;
     private String state;
 
-    @OneToOne(mappedBy = "addresses", fetch = FetchType.LAZY)
-    private Student student;
 
     public Addresses() {
     }
@@ -27,6 +24,5 @@ public class Addresses {
         this.city = city;
         this.state = state;
     }
-
 
 }

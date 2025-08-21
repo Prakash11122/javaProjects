@@ -38,12 +38,12 @@ public class AppService {
 //        System.out.println(addresses);
     }
 
-    public void getStudentDataFromAddress() {
-        Addresses addresses = addressRepository.findById(1).get();
-        System.out.println(addresses);
-        Student student = addresses.getStudent();
-        System.out.println(student );
-    }
+//    public void getStudentDataFromAddress() {
+//        Addresses addresses = addressRepository.findById(1).get();
+//        System.out.println(addresses);
+//        Student student = addresses.getStudent();
+//        System.out.println(student );
+//    }
 
 
     public void getStudentDataFromAddress1() {

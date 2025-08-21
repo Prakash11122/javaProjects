@@ -2,6 +2,7 @@ package com.jpa.one2one.one2one.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.web.bind.annotation.Mapping;
 
 
 @Entity
@@ -14,6 +15,9 @@ public class Addresses {
     private String houseDetails;
     private String city;
     private String state;
+
+    @OneToOne(mappedBy = "addresses", fetch = FetchType.LAZY)
+    private Student student;
 
     public Addresses() {
     }

@@ -36,8 +36,21 @@ public class AppService {
 
 //        Addresses addresses = studentData.getAddresses();
 //        System.out.println(addresses);
+    }
+
+    public void getStudentDataFromAddress() {
+        Addresses addresses = addressRepository.findById(1).get();
+        System.out.println(addresses);
+        Student student = addresses.getStudent();
+        System.out.println(student );
+    }
 
 
+    public void getStudentDataFromAddress1() {
+        System.out.println("*********************");
+        Addresses addresses = addressRepository.findById(1).get();
+        System.out.println(addresses);
+        System.out.println("######################");
     }
 
 

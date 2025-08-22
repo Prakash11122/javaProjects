@@ -9,11 +9,19 @@ import lombok.Data;
 public class Addresses {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "start_form_1000", initialValue = 1000, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "start_form_1000")
     private int addressId;
+
     private String houseDetails;
+
     private String city;
+
     private String state;
+
+
+    @OneToMany
+    private Student student;
 
 
     public Addresses() {
